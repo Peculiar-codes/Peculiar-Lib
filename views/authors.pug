@@ -1,0 +1,9 @@
+extend layout
+block content
+ div.container
+  h1 Authors List
+   if authors
+    ul
+     for author in authors
+      li
+       a(href=`/books/author/${author._id}`) #{author.name}

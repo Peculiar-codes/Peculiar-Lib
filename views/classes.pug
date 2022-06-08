@@ -1,0 +1,8 @@
+extend layout
+block content
+ div.container
+  if classes
+   ul
+    for class in classes
+     li
+      a(href=`/books/classes/${class._id}`) class.name

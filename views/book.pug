@@ -1,0 +1,16 @@
+extend layout
+block content
+ figure.bookImgCon
+  img(src="#{book.image}" class="img bookImg" id="bookImg")
+  figcaption
+   h2=book.name
+   span(id="book'sauthor" class="bg-blue-30") by #{book.author.name} on #{book.publishingDate}
+ div(class="reactions")
+  span(class="likesButton fa fa-thumbs-up" id="likebook") #{book.likes}
+  span(class="commentsButton fa fa-message" id="commentOnBook") #{book.comments}
+ div(class="summary")
+   #{book.summary}
+ button(class="btn startBtn" ) Start reading
+ div(class="story book hidden container") #{book.story}
+   
+ 

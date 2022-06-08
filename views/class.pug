@@ -1,0 +1,9 @@
+extend layout
+block content
+ div.container
+  h1= class.name
+  if class.books
+   ul
+    for book in class.book
+    li
+     a(href=`/books/book/${book._id}`) book.name

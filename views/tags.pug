@@ -1,0 +1,8 @@
+extend layout
+block content
+ div.container
+  if tags
+   ul
+    for tag in tags
+     li
+      a(href=`/books/tags/${tag._id}`) tag.name

@@ -1,0 +1,24 @@
+extend layout
+block content
+    div(class="form-container")
+    h1(id="login_header") Login
+     form(method="post" action="/users/login" class="form" id="login_form")
+        if errors
+        li!= errors
+        div(class="input_con bg-red-300")
+              input(id="username" class="input" placeholder="Username" type="text" name="username" required)
+        div(class="input_con r")
+             input(id="password" class="input" placeholder="password" type="password" name="password")
+        div(class="submit_con")
+           input(type="submit" id="submit" value="submit")
+        a(href="/users/signup") Signup
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

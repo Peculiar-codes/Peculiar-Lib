@@ -1,0 +1,6 @@
+extend layout
+block content
+ if books
+  for book in books
+   a(href=#{book.url}) book.name
+ h1 No books available

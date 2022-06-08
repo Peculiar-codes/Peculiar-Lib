@@ -1,0 +1,8 @@
+extend layout
+block content
+ div.container
+    if genres
+   ul
+    for genre in genres
+     li
+      a(href=`/books/genres/${genre._id}`) genre.name

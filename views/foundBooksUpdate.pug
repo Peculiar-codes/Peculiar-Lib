@@ -1,0 +1,8 @@
+extend layout
+block content
+ if books
+  for book in books
+   a(href=#{book.url}) book.name
+   button(id="delbook") Update
+ else 
+  h1 No books available

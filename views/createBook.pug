@@ -1,0 +1,44 @@
+extend layout
+block content
+    div(class="form-container")
+    h1(id="create_header") Create a book
+     form(method="post" action="/books/createBook" class="form" id="signup_form")
+        if errors
+         ul
+         for error in errors
+          li!= error.msg
+        div(class="rounded hover:shadow-xl text-green-400 input_con")
+             input(id="bookName" class="input" placeholder="book Name" type="text"  name="name" required)
+        div(class="input_con c")
+            input(id="author_name" class="input" placeholder="author_name" type="text" name="author" required)
+        div(class="input_con ")
+              input(id="summary" class="input" placeholder="Summary" type="text" name="summary" required)
+        div(class="input_con content")
+             input(type="text" name="tags")
+        select(class="input_con " name="classification" multiple size="3")
+             option(id="horror" value="horro") horror
+             option(id="horror" value="horro") horror
+             option(id="horror" value="horro") horror
+             option(id="horror" value="horro") horror
+             option(id="action" value="action") Action
+             option(id="romance" value="romance") Romance
+             option(id="thriller" value="thriller") Thriller
+        select(class="input_con " name="genre")
+             option(value="") Select an item
+             option(id="poetry" value="poetry") poetry
+             option(id="drama" value="drama") drama
+             option(id="prose" value="prose") prose
+        div(class="input_con ")
+            input(id="story" class="input" placeholder="Story" type="text" name="story" required)
+        div(class="bookImgForm")
+         label(for="image") Book's image
+         input(type="file" accept="image/*" id="image" name="image")
+        div
+         label(for="authorImg") Author's image
+         input(type="file" accept="image/*" id="authorImg" name="authorImg")
+        div.authorHistory
+         input(class="input"  name="authorHis" placeholder="Tell us a little about the author")
+        div(class="submit_con")
+           input(type="submit" id="submit" value="submit")
+        input(type="hidden" value=`${new Date}` name="date")
+        a(href="/") Home

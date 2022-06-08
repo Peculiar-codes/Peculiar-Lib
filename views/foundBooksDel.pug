@@ -1,0 +1,8 @@
+extend layout
+block content
+ if book
+  a(href="#{url}") #{book.name}
+  form(action=`${url}/delete` method="post")
+  button(id="delbook" type="submit") Delete
+ else
+  p Sorry couldn't find the book

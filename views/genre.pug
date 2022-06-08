@@ -1,0 +1,10 @@
+extends layout
+
+block content
+
+ h1 #{genre.name}
+ if genre.books
+  ul
+   for book in genre.books
+    li
+      a(href=`books/book/${book._id}`) book.name

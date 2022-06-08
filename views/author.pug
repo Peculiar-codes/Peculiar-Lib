@@ -1,0 +1,18 @@
+extend layout
+block content
+ div.container
+  figure
+   img(src="#{author.image")
+   figcaption
+    h2 #{author.name}
+  div(class="container")
+   #{author.history}
+  div.container
+   h1 Books
+    if author.books
+     ul
+      for book in author.books
+       li
+        h4
+         a(href="#{url}") #{book.name}
+        span #{book.publishingDate}
