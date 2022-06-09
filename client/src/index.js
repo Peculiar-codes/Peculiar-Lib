@@ -5,13 +5,24 @@ import { store } from './app/store'
 import reportWebVitals from './reportWebVitals'
 import './Stylesheets/Index.css'
 import './index.css'
-import App from "./App"
+import App from "./App";
+import Books from "./features/Books/Books";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
     <Provider store={store}>
-       <App />
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Books />}/>
+    <Route path="/create" element={<App />}/>
+    </Routes>
+    </BrowserRouter>
     </Provider>
 );
 
