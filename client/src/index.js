@@ -3,8 +3,11 @@ import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
 import reportWebVitals from './reportWebVitals'
+import './Stylesheets/App.css'
 import './Stylesheets/Index.css'
-import './index.css'
+import './index.css';
+import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import Books from "./features/Books/Books";
 import {
@@ -17,12 +20,8 @@ const root = createRoot(container);
 
 root.render(
     <Provider store={store}>
-    <BrowserRouter>
-    <Routes>
-    <Route path="/" element={<Books />}/>
-    <Route path="/create" element={<App />}/>
-    </Routes>
-    </BrowserRouter>
+    <Books />
+    <App />
     </Provider>
 );
 

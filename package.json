@@ -6,9 +6,10 @@
     "start": "node ./bin/www",
     "tailwind:css": "tailwindcss -i ./client/src/index.css -o ./client/src/App.css",
     "server": "nodemon app.js",
-    "sass": "sass --watch client/src/Stylesheets/Index.scss client/src/Stylesheets/App.css",
+    "sass": "sass --watch client/src/Stylesheets/Index.scss client/src/index.css",
     "client": "npm start --prefix client",
-    "app": "concurrently \"yarn server\" \"yarn  client \" \"yarn sass\""
+    "app": "concurrently \"yarn server\" \"yarn  frontend \"",
+    "frontend": "concurrently \"yarn sass\" \"yarn client\""
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.17.12",
@@ -43,6 +44,7 @@
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "pug": "^3.0.2",
+    "react-bootstrap": "^2.4.0",
     "react-motion": "^0.5.2",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",

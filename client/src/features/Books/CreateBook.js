@@ -4,7 +4,7 @@ import { useReducer } from "react";
 import { useDispatch , useSelector } from "react-redux";
 import { addNewBook}  from "./BooksSlice";
 import { allUsers }  from "../Users/UsersSlice";
-
+import Button from "@material-ui/core/Button"
 const CreateBook = (e) =>{
   var dispatch= useDispatch();
   const Users = useSelector(allUsers);
@@ -112,7 +112,7 @@ const classes=[
   ];
    return (
      <>
-     <form>
+     <form className="container bg-blue-400 text-blue-700 shadow-xl">
     <Input type="text" ph="Name" value={state.name} onChange={(e)=>{
       setState({
       type:"setName",
@@ -159,7 +159,10 @@ const classes=[
        payload:e.target.value
        })
      }}/>
-     <input type="submit" value="submit" onClick={create}/>
+     <input type="submit" value="submit" className="btn" onClick={create}/>
+     <Button type="submit" variant="contained" color="primary">
+     6h
+     </Button>
      </form>
      </>
      );
